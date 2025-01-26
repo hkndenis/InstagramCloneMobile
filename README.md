@@ -1,50 +1,96 @@
-# Welcome to your Expo app 👋
+# Instagram Clone Mobile App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## 📱 Proje Özeti
+Instagram benzeri bir sosyal medya mobil uygulaması. Kullanıcılar fotoğraf paylaşabilir, diğer kullanıcıları takip edebilir ve gönderilerle etkileşime girebilir.
 
-## Get started
+## 🎯 Hedef Kitle
+- 13-45 yaş arası sosyal medya kullanıcıları
+- Fotoğraf paylaşmayı seven kullanıcılar 
+- Sosyal etkileşim arayan kullanıcılar
 
-1. Install dependencies
+## 🛠️ Teknoloji Yığını
 
-   ```bash
-   npm install
-   ```
+### Frontend
+- React Native (Expo)
+- TypeScript
+- Redux Toolkit (State Management)
+- React Navigation
+- Axios
+- Expo Image Picker
+- Expo Secure Store
 
-2. Start the app
+### Backend
+- Python Flask
+- PostgreSQL
+- JWT Authentication
+- CORS
 
-   ```bash
-    npx expo start
-   ```
+## 📂 Klasör Yapısı
+src/
+├── app/
+│ ├── (auth)/ # Kimlik doğrulama sayfaları
+│ ├── (tabs)/ # Ana sekmeler
+│ └── layout.tsx # Uygulama düzeni
+├── components/ # UI bileşenleri
+├── services/ # API servisleri
+├── hooks/ # Özel hook'lar
+├── store/ # Redux store
+└── utils/ # Yardımcı fonksiyonlar
 
-In the output, you'll find options to open the app in a
+## ⭐ Temel Özellikler
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### Kimlik Doğrulama
+- Kayıt olma
+- Giriş yapma
+- Şifre sıfırlama
+- Oturum yönetimi
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Profil Yönetimi
+- Profil düzenleme
+- Profil fotoğrafı yükleme
+- Kullanıcı bilgilerini görüntüleme
 
-## Get a fresh project
+### Gönderi İşlemleri
+- Fotoğraf yükleme ve paylaşma
+- Açıklama ekleme
+- Gönderi silme
+- Gönderi listeleme
 
-When you're ready, run:
+### Sosyal Etkileşim
+- Gönderi beğenme
+- Yorum yapma
+- Kullanıcıları takip etme
+- Takipçi/takip edilen listeleme
 
-```bash
-npm run reset-project
-```
+### Keşfet
+- Popüler gönderileri görüntüleme
+- Kullanıcı arama
+- Önerilen kullanıcılar
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 🔒 Güvenlik Önlemleri
+- JWT token kullanımı
+- Refresh token mekanizması
+- Şifre hashleme
+- HTTPS kullanımı
+- Input validasyonu
+- SQL injection koruması
+- XSS koruması
 
-## Learn more
+## 🚀 Performans Optimizasyonları
+- Görüntü önbelleğe alma
+- Lazy loading
+- Sonsuz scroll
+- Database indexleme
+- Query optimizasyonu
+- Caching mekanizması
 
-To learn more about developing your project with Expo, look at the following resources:
+## 📱 Gelecek Özellikler
+- [ ] Hikaye paylaşma
+- [ ] Direct messaging
+- [ ] Push notifications
+- [ ] Video paylaşımı
+- [ ] Konum etiketleme
+- [ ] Offline kullanım desteği
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## 📝 Lisans
+Bu proje MIT lisansı altında lisanslanmıştır.

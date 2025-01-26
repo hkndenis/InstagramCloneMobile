@@ -36,3 +36,38 @@ yarn-error.*
 *.tsbuildinfo
 
 app-example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Local development
+*.env.local
+*.env.development.local
+*.env.test.local
+*.env.production.local
+
+# Dependencies
+/.pnp
+.pnp.js
+
+# Testing
+/coverage
+
+# Production
+/build
+
+PRD-SDD.md
+cursorrules.md
