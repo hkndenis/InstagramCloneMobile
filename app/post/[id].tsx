@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { View, StyleSheet, TextInput, TouchableOpacity, Dimensions, Modal } from 'react-native';
-import { useLocalSearchParams } from 'expo-router';
+import { View, StyleSheet, TextInput, TouchableOpacity, Dimensions, Modal, Alert } from 'react-native';
+import { useLocalSearchParams, Stack } from 'expo-router';
 import { ThemedView } from '@/components/ThemedView';
 import { ThemedText } from '@/components/ThemedText';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -24,6 +24,7 @@ import {
   GestureDetector,
   GestureHandlerRootView,
 } from 'react-native-gesture-handler';
+import { useAuth } from '@/providers/AuthProvider';
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
 const IMAGE_HEIGHT = SCREEN_WIDTH;
@@ -41,6 +42,7 @@ const AnimatedImage = Animated.createAnimatedComponent(Image);
 
 export default function PostDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
+  const { token } = useAuth();
   const [post, setPost] = useState<Post | null>(null);
   const [comments, setComments] = useState<Comment[]>([]);
   const [newComment, setNewComment] = useState('');
@@ -54,6 +56,8 @@ export default function PostDetailScreen() {
   const savedTranslateY = useSharedValue(0);
   const [isLikeAnimating, setIsLikeAnimating] = useState(false);
   const router = useRouter();
+
+  const isOwner = post && token === String(post.user_id);
 
   useEffect(() => {
     fetchPostDetails();
@@ -165,6 +169,41 @@ export default function PostDetailScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <ThemedView style={styles.content}>
+        <Stack.Screen
+          options={{
+            title: 'Gönderi',
+            headerRight: () => isOwner ? (
+              <TouchableOpacity 
+                onPress={() => {
+                  Alert.alert(
+                    'Gönderiyi Sil',
+                    'Bu gönderiyi silmek istediğinizden emin misiniz?',
+                    [
+                      { text: 'İptal', style: 'cancel' },
+                      { 
+                        text: 'Sil', 
+                        style: 'destructive',
+                        onPress: async () => {
+                          try {
+                            await postsAPI.deletePost(Number(id));
+                            router.replace('/(tabs)');
+                          } catch (error) {
+                            Alert.alert('Hata', 'Gönderi silinemedi');
+                          }
+                        }
+                      }
+                    ]
+                  );
+                }}
+                style={styles.deleteButton}
+              >
+                <View style={styles.deleteButtonContainer}>
+                  <ThemedText style={styles.deleteButtonText}>Sil</ThemedText>
+                </View>
+              </TouchableOpacity>
+            ) : null
+          }}
+        />
         <TouchableOpacity onPress={handleImagePress}>
           <Image
             source={{ uri: post.image_url }}
@@ -400,4 +439,17 @@ const styles = StyleSheet.create({
     fontSize: 24,
     marginRight: 5,
   },
+  deleteButton: {
+    marginRight: 15,
+  },
+  deleteButtonContainer: {
+    backgroundColor: '#ff4444',
+    paddingVertical: 6,
+    paddingHorizontal: 12,
+    borderRadius: 4,
+  },
+  deleteButtonText: {
+    color: 'white',
+    fontWeight: 'bold',
+  }
 });

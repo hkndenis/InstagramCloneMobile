@@ -188,11 +188,6 @@ export default function ProfileScreen() {
           estimatedItemSize={PHOTO_SIZE}
           contentContainerStyle={styles.gridContainer}
           ItemSeparatorComponent={() => <View style={{ height: GRID_SPACING }} />}
-          ListFooterComponent={
-            <TouchableOpacity style={styles.logoutButton} onPress={signOut}>
-              <ThemedText style={styles.logoutText}>Çıkış Yap</ThemedText>
-            </TouchableOpacity>
-          }
           onEndReached={fetchMorePosts}
           onEndReachedThreshold={0.5}
         />

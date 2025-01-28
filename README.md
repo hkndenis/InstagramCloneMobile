@@ -25,18 +25,6 @@ Instagram benzeri bir sosyal medya mobil uygulaması. Kullanıcılar fotoğraf p
 - JWT Authentication
 - CORS
 
-## 📂 Klasör Yapısı
-src/
-├── app/
-│ ├── (auth)/ # Kimlik doğrulama sayfaları
-│ ├── (tabs)/ # Ana sekmeler
-│ └── layout.tsx # Uygulama düzeni
-├── components/ # UI bileşenleri
-├── services/ # API servisleri
-├── hooks/ # Özel hook'lar
-├── store/ # Redux store
-└── utils/ # Yardımcı fonksiyonlar
-
 ## ⭐ Temel Özellikler
 
 ### Kimlik Doğrulama
@@ -84,13 +72,3 @@ src/
 - Query optimizasyonu
 - Caching mekanizması
 
-## 📱 Gelecek Özellikler
-- [ ] Hikaye paylaşma
-- [ ] Direct messaging
-- [ ] Push notifications
-- [ ] Video paylaşımı
-- [ ] Konum etiketleme
-- [ ] Offline kullanım desteği
-
-## 📝 Lisans
-Bu proje MIT lisansı altında lisanslanmıştır.

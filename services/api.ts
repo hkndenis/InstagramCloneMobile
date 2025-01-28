@@ -121,6 +121,8 @@ export const postsAPI = {
       }
     };
   },
+  
+  deletePost: (postId: number) => api.delete(`/api/post/${postId}`),
 };
 
 export const userAPI = {
