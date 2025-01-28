@@ -3,11 +3,6 @@
 ## 📱 Proje Özeti
 Instagram benzeri bir sosyal medya mobil uygulaması. Kullanıcılar fotoğraf paylaşabilir, diğer kullanıcıları takip edebilir ve gönderilerle etkileşime girebilir.
 
-## 🎯 Hedef Kitle
-- 13-45 yaş arası sosyal medya kullanıcıları
-- Fotoğraf paylaşmayı seven kullanıcılar 
-- Sosyal etkileşim arayan kullanıcılar
-
 ## 🛠️ Teknoloji Yığını
 
 ### Frontend
