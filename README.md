@@ -43,27 +43,9 @@ Instagram benzeri bir sosyal medya mobil uygulaması. Kullanıcılar fotoğraf p
 - Gönderi beğenme
 - Yorum yapma
 - Kullanıcıları takip etme
-- Takipçi/takip edilen listeleme
 
 ### Keşfet
 - Popüler gönderileri görüntüleme
 - Kullanıcı arama
 - Önerilen kullanıcılar
-
-## 🔒 Güvenlik Önlemleri
-- JWT token kullanımı
-- Refresh token mekanizması
-- Şifre hashleme
-- HTTPS kullanımı
-- Input validasyonu
-- SQL injection koruması
-- XSS koruması
-
-## 🚀 Performans Optimizasyonları
-- Görüntü önbelleğe alma
-- Lazy loading
-- Sonsuz scroll
-- Database indexleme
-- Query optimizasyonu
-- Caching mekanizması
 
